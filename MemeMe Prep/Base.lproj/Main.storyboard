@@ -32,9 +32,15 @@
                                     <constraint firstAttribute="height" constant="44" id="9n1-dq-Jm5"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Pick" id="tgO-5E-YX4">
+                                    <barButtonItem systemItem="add" id="tgO-5E-YX4">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="lbe-cH-leg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NzS-vc-3F5"/>
+                                    <barButtonItem systemItem="camera" id="Ea5-M7-KuL">
+                                        <connections>
+                                            <action selector="openCamera:" destination="BYZ-38-t0r" id="iiw-gZ-Ckv"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -52,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="Ea5-M7-KuL" id="NBx-uz-kwf"/>
                         <outlet property="imagePickerView" destination="7Qs-Rw-mHP" id="Rwv-Of-DcQ"/>
                     </connections>
                 </viewController>
