@@ -15,6 +15,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    let memeTextAttributes:[String:Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -3.0]
+    
     @IBAction func pickImage(_ sender: Any) {
         let pickController = UIImagePickerController()
         pickController.delegate = self
@@ -33,7 +39,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.delegate = self
+        topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.textAlignment = .center
         bottomTextField.delegate = self
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.textAlignment = .center
+        
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
