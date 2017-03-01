@@ -36,6 +36,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(pickController, animated: true, completion: nil)
     }
     
+    @IBAction func share(_ sender: Any) {
+        let currentMeme = self.generateMemedImage()
+        let activityView = UIActivityViewController(activityItems: [currentMeme], applicationActivities: nil)
+        self.present(activityView, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -113,6 +119,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // TODO: Show toolbar and navbar
         
         return memedImage
+    }
+    
+    func save() {
+        // Create a meme object
+        //let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
     }
 }
 
