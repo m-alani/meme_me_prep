@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Qs-Rw-mHP">
-                                <rect key="frame" x="19" y="66.5" width="337.5" height="534"/>
-                                <color key="backgroundColor" red="0.90351050659999999" green="0.9736474115" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="28" width="343" height="587"/>
+                                <color key="backgroundColor" red="0.51115145090000003" green="0.80064730809999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBU-fq-KAp">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9n1-dq-Jm5"/>
+                                    <constraint firstAttribute="height" constant="44" id="RGi-bf-ASI"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="add" id="tgO-5E-YX4">
@@ -46,33 +45,47 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-Mo-vrR">
-                                <rect key="frame" x="19" y="66" width="338" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-Mo-vrR">
+                                <rect key="frame" x="16" y="28" width="343" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="noz-Jr-AKJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="AKv-vP-N3Y"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nef-CQ-55Y">
+                                <rect key="frame" x="16" y="555" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="irC-H2-axd"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hBU-fq-KAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3vZ-LI-NgI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hBU-fq-KAp" secondAttribute="bottom" id="4CH-8X-zdb"/>
-                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="Nqt-Vw-KMg"/>
-                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qc2-wB-23H"/>
-                            <constraint firstItem="BVA-Mo-vrR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="gvT-lF-W9l"/>
-                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hKb-AT-BKr"/>
-                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="lgD-2h-pee"/>
-                            <constraint firstItem="BVA-Mo-vrR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="mph-I3-LQ9"/>
-                            <constraint firstAttribute="trailing" secondItem="hBU-fq-KAp" secondAttribute="trailing" id="wh5-dj-ofY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BVA-Mo-vrR" secondAttribute="trailing" constant="3" id="xKw-aW-z9m"/>
+                            <constraint firstItem="hBU-fq-KAp" firstAttribute="top" secondItem="7Qs-Rw-mHP" secondAttribute="bottom" constant="8" id="0V5-iH-3Sf"/>
+                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="25p-bP-doA"/>
+                            <constraint firstItem="Nef-CQ-55Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CNI-6l-YOx"/>
+                            <constraint firstItem="hBU-fq-KAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aUm-E7-l8i"/>
+                            <constraint firstItem="hBU-fq-KAp" firstAttribute="top" secondItem="Nef-CQ-55Y" secondAttribute="bottom" constant="8" id="c9s-2i-igA"/>
+                            <constraint firstItem="BVA-Mo-vrR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="d5b-H0-Axe"/>
+                            <constraint firstItem="Nef-CQ-55Y" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hnY-2A-GzE"/>
+                            <constraint firstAttribute="trailing" secondItem="hBU-fq-KAp" secondAttribute="trailing" id="kS2-Ih-bXU"/>
+                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lZq-h1-sxY"/>
+                            <constraint firstItem="7Qs-Rw-mHP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mST-bw-u7P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hBU-fq-KAp" secondAttribute="bottom" id="qd2-qT-Koc"/>
+                            <constraint firstItem="BVA-Mo-vrR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wQV-bl-egG"/>
+                            <constraint firstItem="BVA-Mo-vrR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xMf-zf-Ma6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="Nef-CQ-55Y" id="8OD-y6-gfK"/>
                         <outlet property="cameraButton" destination="Ea5-M7-KuL" id="NBx-uz-kwf"/>
                         <outlet property="imagePickerView" destination="7Qs-Rw-mHP" id="Rwv-Of-DcQ"/>
+                        <outlet property="topTextField" destination="BVA-Mo-vrR" id="v0w-2B-UJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
