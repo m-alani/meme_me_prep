@@ -38,6 +38,8 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NzS-vc-3F5"/>
+                                    <barButtonItem enabled="NO" systemItem="action" id="DyJ-yO-euA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mFe-TQ-2RM"/>
                                     <barButtonItem systemItem="camera" id="Ea5-M7-KuL">
                                         <connections>
                                             <action selector="openCamera:" destination="BYZ-38-t0r" id="iiw-gZ-Ckv"/>
@@ -85,6 +87,7 @@
                         <outlet property="bottomTextField" destination="Nef-CQ-55Y" id="8OD-y6-gfK"/>
                         <outlet property="cameraButton" destination="Ea5-M7-KuL" id="NBx-uz-kwf"/>
                         <outlet property="imagePickerView" destination="7Qs-Rw-mHP" id="Rwv-Of-DcQ"/>
+                        <outlet property="shareButton" destination="DyJ-yO-euA" id="fg2-GR-j6g"/>
                         <outlet property="topTextField" destination="BVA-Mo-vrR" id="v0w-2B-UJF"/>
                     </connections>
                 </viewController>
