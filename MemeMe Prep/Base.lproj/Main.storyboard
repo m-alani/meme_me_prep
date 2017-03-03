@@ -92,6 +92,7 @@
                         <outlet property="cameraButton" destination="Ea5-M7-KuL" id="NBx-uz-kwf"/>
                         <outlet property="imagePickerView" destination="7Qs-Rw-mHP" id="Rwv-Of-DcQ"/>
                         <outlet property="shareButton" destination="DyJ-yO-euA" id="fg2-GR-j6g"/>
+                        <outlet property="toolbar" destination="hBU-fq-KAp" id="OQd-JY-OVj"/>
                         <outlet property="topTextField" destination="BVA-Mo-vrR" id="v0w-2B-UJF"/>
                     </connections>
                 </viewController>
