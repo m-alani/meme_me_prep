@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolbar: UIToolbar!
     
+    var editingTopText = false
+    
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
@@ -75,8 +77,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = textField.text == "TOP" ? "" : textField.text
-        textField.text = textField.text == "BOTTOM" ? "" : textField.text
+        if textField.tag == 1 {
+            textField.text = textField.text == "TOP" ? "" : textField.text
+            self.editingTopText = true
+        } else {
+            textField.text = textField.text == "BOTTOM" ? "" : textField.text
+            self.editingTopText = false
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -91,12 +98,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        if !self.editingTopText {
+            view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        view.frame.origin.y = 0
+        if !self.editingTopText {
+            view.frame.origin.y = 0
+            self.editingTopText = false
+        }
     }
+    
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -109,8 +122,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and move bottom text
         toolbar.isHidden = true
+        bottomTextField.frame.origin.y += 20
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -118,8 +132,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        // Show toolbar and move bottom text back
         toolbar.isHidden = false
+        bottomTextField.frame.origin.y -= 20
         
         return memedImage
     }
